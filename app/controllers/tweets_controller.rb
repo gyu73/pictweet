@@ -15,7 +15,7 @@ class TweetsController < ApplicationController
   end
 
   def create
-    Tweet.create(tweet_params)
+    Tweet.create(text: tweet_params[:name],image: tweet_params[:image], user_id: current_user.id)
   end
 
   def destroy
